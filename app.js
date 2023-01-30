@@ -4,6 +4,7 @@ require('./configs/db.config'); //It should be exectuded after express requireme
 const express = require('express');
 const app = express();
 const logger = require('morgan');
+app.use(logger('dev'));
 
 
 
@@ -12,7 +13,6 @@ app.set('views', `${__dirname}/views`);
 
 const routes = require(`${__dirname}/configs/routes.config`)
 app.use(routes);
-app.use(logger('dev'));
 
 const port = process.env.PORT || 3001;
 
