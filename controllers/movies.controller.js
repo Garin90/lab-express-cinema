@@ -12,8 +12,8 @@ module.exports.list = (req, res, next) => {
 
 module.exports.detail = (req, res, next) => {
     Movie.findById(req.params.id)
-        .then((movie) => {
-            res.render('movies/detail', {movie:movie})
+        .then((movies) => {
+            res.render('movies/detail', {movie:movies})
 
         })
 }

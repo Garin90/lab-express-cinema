@@ -10,8 +10,8 @@ app.use(logger('dev'));
 
 app.set('view engine', 'hbs');
 app.set('views', `${__dirname}/views`);
-
-const routes = require(`${__dirname}/configs/routes.config`)
+app.use(express.static(`${__dirname}/public`));
+const routes = require(`${__dirname}/configs/routes.config`);
 app.use(routes);
 
 const port = process.env.PORT || 3001;

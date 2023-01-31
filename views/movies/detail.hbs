@@ -3,5 +3,22 @@
 
     <div>
         <img src="{{movie.image}}" alt="{{movie.name}} image">
+        
+        <a href="/movies">Go back</a>
         <li>{{movie.title}}</li>
+        <li>Director: {{movie.director}}</li>
+        <div>Stars
+            <ul>
+                {{#each movie.stars as |star|}}
+                    <li>{{star}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <p>{{movie.description}}</p>
+
+        <p>
+            {{#each movie.showtimes as |showtime|}}
+            {{showtime}} |
+            {{/each}}
+        </p>
     </div>
